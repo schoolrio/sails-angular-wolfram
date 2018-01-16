@@ -1,3 +1,46 @@
+# Schoolr Frontend/Backend Wolfram Challenge
+
+This challenge is to test your skill at creating frontend/backends. At Schoolr, we use a decoupled scheme to separate the backend api from the frontend angular website. This allows for greater flexibility in development, maintenance and scalability. We don't like algorithmic tests since algorithms do not cover how to configure a load balancer, write good test cases, or troubleshoot a connectivity issue. You have been given this challenge because we want to see how you use the tools given to you, with ample time to create a working app.
+
+## The Prompt
+Create an angular/sails (MEAN Stack) application using this starter template to query [The Wolfram Alpha API](https://products.wolframalpha.com/api/) and return data back to the user. The API allows up to 2,000 queries/month for free so it should fit well beneath that threshold. The app is simple, a user should be able to:
+
+ 1. Query the wolfram api through sails with a question (e.g. integrate x^2, what is the distance from the earth to the sun, how many months are in a year?) and return the result to be displayed on the screen.
+ 2. Show the user's query history on a separate tab or page.
+ 3. (Extra Credit) Have multiple user accounts, allowing a user to register, login and logout. 
+
+Guidelines:
+
+ - All wolfram queries should be made through sails.
+	 - Create a [sails endpoint](https://sailsjs.com/documentation/concepts/controllers) that allows the user to pass their question string to sails to query wolfram. 
+	 - Create a [service](https://sailsjs.com/documentation/concepts/services) in sails that handles requests to the Wolfram API. 
+	 - Return the Wolfram data back through sails and to the frontend in a json object.
+ - The user's query history should persist
+	 - Sails uses an ORM called [waterline](https://sailsjs.com/documentation/reference/waterline-orm/models) to handle database transactions.  Create a model to handle the query history and save each request the user makes using this model. 
+	 - Use mongodb as the underlying database engine.
+	 - If creating user accounts, record the user id or account name making the request to display it later to the correct user.
+
+Mockups:
+
+![Search page](https://i.imgur.com/1NDViKq.png)
+![Search result](https://i.imgur.com/Pn23FGf.png)
+
+![History](https://i.imgur.com/OVe9QS1.png)
+## What we're looking for
+
+ - Completeness  - Does it accomplish the full prompt?
+ - Functionality - Can it be used easily?
+ - Durability - Will it break if I give it something it doesn't expect?
+ - **Bonus Pts** Accounts - Implement user accounts with login/logout functionality
+ - **Bonus Pts** Security - Can it repell an attacker?
+ - **Bonus Pts** Documentation - Are we able to understand what was written?
+ - **Extra Bonus  Pts** Testing - Is the functionality thoroughly tested using sails and angular unit tests? Look at the sample unit tests in the project to get an idea of how to write one.
+
+## How to Submit
+To start work, fork this project on github. Work at your own pace and commit your project when necessary (we want to see your commits too). When you're finished, create a pull request and we will review your work. Good luck!
+
+Below is an in-depth description of the Angular + Sails boilerplate project
+
 # 'Boilerplate' for AngularJS + Sails.js
 
 ### Why?
